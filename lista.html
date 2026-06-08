@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista</title>
+</head>
+<body>
+    <script>
+        let lista = ["Juan", "Guilherme", "kenedy", "Ariel", "Jose", "Manu", "duda", "Rafa", "Carla", "Lucivania"];
+        console.log("push:", lista);
+
+        lista.pop();
+        lista.pop();
+        lista.pop();
+        console.log("pop:", lista);
+
+        console.log("sort:", [...lista].sort());
+
+        let junto = "";
+        for (let i = 0; i < lista.length; i++) {
+            junto = junto + lista[i] + " | ";
+        }
+        console.log("reduce:", junto);
+
+        console.log("map:", lista.map(item => item.toUpperCase()));
+
+        console.log("filter:", lista.filter(item => item[0] === "J"));
+
+        console.log("find:", lista.find(item => item === "Manu"));
+
+        console.log("length:", lista.length);
+
+        console.log("splice original:", lista);
+        lista.splice(2, 0, "impostor");
+        console.log("splice adicionar:", lista);
+        lista.splice(3, 1);
+        console.log("splice remover:", lista);
+        lista.splice(1, 1, "Novo Impostor");
+        console.log("splice substituir:", lista);
+
+        let aluno = { nome: "Juan", idade: 16, nota: 8.5 };
+        console.log("objeto aluno:", aluno);
+
+        let alunos = [];
+        alunos.push({ nome: "Juan", idade: 16, nota: 8.5 });
+        alunos.push({ nome: "Guilherme", idade: 17, nota: 7.0 });
+        alunos.push({ nome: "kenedy", idade: 16, nota: 9.0 });
+        alunos.push({ nome: "Ariel", idade: 16, nota: 6.5 });
+        alunos.push({ nome: "Jose", idade: 17, nota: 8.0 });
+        alunos.push({ nome: "Manu", idade: 16, nota: 7.5 });
+        alunos.push({ nome: "duda", idade: 16, nota: 9.5 });
+        alunos.push({ nome: "Rafa", idade: 16, nota: 8.0 });
+        alunos.push({ nome: "Carla", idade: 16, nota: 8.8 });
+        alunos.push({ nome: "Lucivania", idade: 16, nota: 7.2 });
+        console.log("10 alunos:", alunos);
+
+        let json = `[
+            {"id":1,"nome":"Notebook","preco":3500},
+            {"id":2,"nome":"Smartphone","preco":2000},
+            {"id":3,"nome":"Camiseta","preco":49},
+            {"id":4,"nome":"Tenis","preco":299},
+            {"id":5,"nome":"Livro","preco":39},
+            {"id":6,"nome":"Mouse","preco":89},
+            {"id":7,"nome":"Mochila","preco":159},
+            {"id":8,"nome":"Fone","preco":199},
+            {"id":9,"nome":"Relogio","preco":499},
+            {"id":10,"nome":"Cadeira","preco":1299}
+        ]`;
+        console.log("JSON produtos:", JSON.parse(json));
+    </script>
+</body>
+</html>
